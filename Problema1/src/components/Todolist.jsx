@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 export default function TodoList() {
     const [todos, setTodos] = useState([]);
@@ -31,7 +31,7 @@ export default function TodoList() {
     return (
         <div>
             <h1>Lista de Tareas</h1>
-
+            <br />
 
             <input
                 type="text"
@@ -39,12 +39,14 @@ export default function TodoList() {
                 onChange={(e) => setNewTodo(e.target.value)}
                 placeholder="Agregar tarea"
             />
+            <br />
             <button onClick={addTodo}>Agregar</button>
+            <br />
 
+            <ul className="list-group">
 
-            <ul>
                 {todos.map((todo) => (
-                    <li key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
+                    <li className="list-group-item " key={todo.id} style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}>
                         <span onClick={() => toggleCompletion(todo.id)}>{todo.text}</span>
                         <button onClick={() => deleteTodo(todo.id)}>Eliminar</button>
                     </li>

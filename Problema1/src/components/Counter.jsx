@@ -12,10 +12,10 @@ export default function Contador() {
       </h1>
       <h3>{count}</h3>
       <button onClick={() => setCount((count) => count + 1)}>
-        increment
+        incremento
       </button>
       <button onClick={() => setCount((count) => count - 1)}>
-        decrement
+        decremento
       </button>
 
     </div>
